@@ -1,3 +1,7 @@
+import subprocess
+from utils import log_execution
+
+#function to execute shell commands
 def execute_command(command):
     try:
         result = subprocess.run(command, shell=True, capture_output=True, text=True)

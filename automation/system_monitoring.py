@@ -1,6 +1,7 @@
-import psutil
+import psutil #library to retrieve system information
 from utils.logger import log_execution
 
+#function to retrieve cpu usage returns percentage
 def get_cpu_usage():
     function_name = "get_cpu_usage"
     try:
@@ -11,6 +12,7 @@ def get_cpu_usage():
         log_execution(function_name, "ERROR", str(e))
         return f"Error: {e}"
 
+#function to retrieve ram usage returns percentage
 def get_ram_usage():
     function_name = "get_ram_usage"
     try:

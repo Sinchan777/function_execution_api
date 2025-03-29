@@ -1,3 +1,8 @@
+import os
+from utils.logger import log_execution
+import shutil
+
+#function to create a file
 def create_file(file_path):
     try:
         with open(file_path, 'w') as f:
@@ -6,8 +11,9 @@ def create_file(file_path):
         return "File created"
     except Exception as e:
         log_execution("create_file", "ERROR", str(e))
-        return f"Error creating file"
+        return f"Errorr creating file"
 
+#function to delete a file
 def delete_file(file_path):
     try:
         if os.path.exists(file_path):
@@ -18,8 +24,9 @@ def delete_file(file_path):
         return "File not found."
     except Exception as e:
         log_execution("delete_file", "ERROR", str(e))
-        return f"Error deleting file"
+        return f"Errorr deleting file"
 
+#function to move a file from one place to another
 def move_file(src, dest):
     try:
         shutil.move(src, dest)

@@ -1,0 +1,8 @@
+psutil
+shutil
+chromadb
+sentence-transformers
+fastapi
+uvicorn
+pydantic
+webbrowser

@@ -1,5 +1,8 @@
-import webbrowser
+import webbrowser #Library to open web pages
+import os 
 from utils.logger import log_execution
+
+#as per the assignemnt requirements chrome, calculator, notepad are the applications to be opened
 def open_chrome():
     try:
         webbrowser.open("https://www.google.com")
@@ -10,17 +13,20 @@ def open_chrome():
 def open_calculator():
     try:
         os.system("gnome-calculator") # Since I am on a linux machine
+        # os.system("calc") # use this for windows
         log_execution("open_calculator", "SUCCESS")
     except Exception as e:
         log_execution("open_calculator", "ERROR", str(e))
 
 def open_notepad():
     try:
-        os.system("gedit")  # Windows Only
+        os.system("gedit") # Since I am on a linux machine
+        # os.system("notepad") # use this for windows
         log_execution("open_notepad", "SUCCESS")
     except Exception as e:
         log_execution("open_notepad", "ERROR", str(e))
 
+#additional applications
 def open_spotify():
     try:
         webbrowser.open("https://open.spotify.com")

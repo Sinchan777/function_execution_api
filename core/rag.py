@@ -1,12 +1,12 @@
-import chromadb
-from sentence_transformers import SentenceTransformer
+import chromadb #one of the best vector database which is open source
+from sentence_transformers import SentenceTransformer #best embedding model
 from utils.logger import log_execution
 
-# Initialize ChromaDB client and embedding model
+#chromadb client initiasted and embedding model loaded
 client = chromadb.PersistentClient(path="./db")
 embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 
-# Function descriptions
+#function descriptions
 FUNCTION_METADATA = {
     "open_chrome": "Launches Chrome browser and opens Google.com",
     "open_calculator": "Opens the system calculator",
@@ -21,10 +21,10 @@ FUNCTION_METADATA = {
     "move_file": "Moves a file from source to destination"
 }
 
-# Create a collection in ChromaDB
+#chromadb collection created to store function metadata
 collection = client.get_or_create_collection(name="functions")
 
-# Populate ChromaDB with function embeddings
+#adding function metadata to the collection
 for func, description in FUNCTION_METADATA.items():
     collection.add(
         ids=[func],
@@ -33,7 +33,7 @@ for func, description in FUNCTION_METADATA.items():
 
 log_execution("ChromaDB Initialization", "SUCCESS", "Function metadata stored in ChromaDB.")
 
-# Retrieve the best-matching function based on user prompt
+#retrieves the function name based on the user prompt, RAG defined!
 def retrieve_function(user_prompt):
     try:
         query_embedding = embedding_model.encode(user_prompt).tolist()

@@ -4,11 +4,14 @@ from core.rag import retrieve_function
 from services.execution_services import execute_function
 from utils.logger import log_execution
 
+#fastapi app instance
+#this is the main entry point for the application
 app = FastAPI()
 
 class TaskRequest(BaseModel):
     prompt: str
 
+#api endpoint to execute a task
 @app.post("/execute")
 def execute_task(request: TaskRequest):
     function_data = retrieve_function(request.prompt)

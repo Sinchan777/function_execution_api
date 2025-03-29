@@ -1,6 +1,7 @@
 import os
 from utils.logger import log_execution
 
+#code template as given in the assignment
 CODE_TEMPLATE = 
 """
 from automation.{module} import {function}
@@ -15,7 +16,7 @@ def main():
 if __name__ == "__main__":
     main()
 """
-
+#function to generate code for a given module and function in the specified tempalte
 def generate_code(module, function, output_file="generated_script.py"):
     try:
         code = CODE_TEMPLATE.format(module=module, function=function)

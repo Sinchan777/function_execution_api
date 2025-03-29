@@ -4,6 +4,7 @@ from automation.file_operations import *
 from automation.system_monitoring import *
 from utils.logger import log_execution
 
+#function registery to map function names to their implementations
 FUNCTION_REGISTRY = {
     "open_chrome": open_chrome,
     "open_calculator": open_calculator,
@@ -18,7 +19,8 @@ FUNCTION_REGISTRY = {
     "move_file": move_file,
 }
 
-# Helper function to get function by name
+#helper function to get function by name, classic RAG approach
+# this function takes a function name as input and returns the corresponding function object
 def get_function_by_name(function_name):
     function = FUNCTION_REGISTRY.get(function_name)
     if function:

@@ -8,4 +8,4 @@ def test_execution(prompt):
     print("Response:", response.json())
 
 if __name__ == "__main__":
-    test_execution("give ram usage") ### This is the prompt to be sent to the API
+    test_execution("open chrome") ### This is the prompt to be sent to the API

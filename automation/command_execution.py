@@ -1,5 +1,5 @@
 import subprocess
-from utils import log_execution
+from utils.logger import log_execution
 
 #function to execute shell commands
 def execute_command(command):

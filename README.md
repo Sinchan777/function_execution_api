@@ -14,3 +14,16 @@ Further run the fastapi server with ```uvicorn api.main:app --reload```
 
 Then give your prompts in the ```test_api.py file```, prompt space has been mentioned in that file
 
+### Sample prompts : 
+
+  open chrome  
+  open calculator  
+  open notepad  
+  open spotify  
+  open youtube  
+  get cpu usage  
+  get ram usage  
+  execute command ls  
+  create file test.txt  
+  delete file test.txt  
+  move file test.txt /new/location/ 
